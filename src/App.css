@@ -1,0 +1,50 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+}
+button {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  padding: 10px 30px;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  background: #222;
+  border-radius: 15px;
+  color: #fff;
+}
+.navList {
+  margin: 20px 20px 20px 70px;
+}
+.navList li {
+  display: inline;
+  margin: 20px 50px 20px 0;
+}
+.main-container {
+  margin-top: 50px;
+}
+.productTile {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+.productImage:hover,
+  button:hover {
+  cursor: pointer;
+}
+.productList-container {
+  width: 50%;
+  float: left;
+}
+.productContainer {
+  position: fixed;
+  left: 50%;
+  float: left;
+}
