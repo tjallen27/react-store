@@ -26,25 +26,13 @@ const productsArr = [
 ];
 
 
-const productList = productsArr.map((product, index) =>
-  <li key={index}>
-    <ul className="productTile">
-      <li className="productImage">
-        <img src={product.image} alt={product.name} width="300" />
-      </li>
-      <li>
-        <h3>{product.name}</h3>
-      </li>
-      <li>£{product.price}</li>
-    </ul>
-  </li>
-);
+
 
 export default class Products extends Component {
   constructor(props){
     super(props)
     this.state = {
-      value: 'https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/x7seiwt2qttpzu50p72o/air-huarache-ultra-mens-shoe-PATLzDAo.jpg',
+      image: 'https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/x7seiwt2qttpzu50p72o/air-huarache-ultra-mens-shoe-PATLzDAo.jpg',
       name: 'Nike Air Huarache Ultra',
       price: 12
     };
@@ -53,26 +41,46 @@ export default class Products extends Component {
 
   handleClick(e) {
     this.setState({
-      value: e.target.src,
-      name: e.target.alt
+      image: e.target.src,
+      name: e.target.alt,
+      price: e.target.parentNode.parentNode.childNodes[2].innerHTML.replace('£','')
     });
-    console.log(e.target.price);
+    console.log(e.target.parentNode.parentNode.childNodes[2].innerHTML.replace('£',''));
   }
 
   render(){
+
+    const productList = productsArr.map((product, index) =>
+      <li key={index}>
+        <ul className="productTile">
+          <li className="productImage" onClick={this.handleClick}>
+            <img src={product.image} alt={product.name} width="300" />
+          </li>
+          <li>
+            <h3>{product.name}</h3>
+          </li>
+          <li>
+            £{product.price}
+          </li>
+        </ul>
+      </li>
+    );
+
     return (
       <div className="main-container">
         <ul className="productList-container" >
-        <div onClick={this.handleClick}>{productList}</div>
+        <div>
+          {productList}
+        </div>
         </ul>
         <ul className="productContainer">
           <div>
-            <img src={this.state.value} width="400"/>
+            <img src={this.state.image} width="400" alt={this.state.name}/>
             <h3>{this.state.name}</h3>
             <Checkout
                name={this.state.name}
-               description={'Only the Book'}
-               amount={1}
+               description={this.state.name}
+               amount={this.state.price}
              />
           </div>
         </ul>
