@@ -5,16 +5,16 @@ ul {
   margin: 0;
   padding: 0;
 }
+li {
+  list-style: none;
+}
 h3 {
   margin: 0;
   padding: 0;
 }
-.logo {
-  position: fixed;
-  left: 45%;
-  top: 10px;
-  transform: translate(-50%);
-  width: 100px;
+.App{
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .StripeCheckout {
   display: block;
@@ -28,17 +28,28 @@ h3 {
   border-radius: 15px;
   color: #fff;
 }
+.nav-container {
+  width: 1200px;
+  left: 45%;
+  top: 0;
+  position: fixed;
+  transform: translate(-50%);
+  z-index: 10;
+}
+.logo {
+  width: 50px;
+  margin-bottom: -20px;
+}
 .navList {
-  width: 100vw;
+  line-height: 28px;
+  text-align: center;
+  margin: 0 auto;
   padding: 40px 0;
   background: #fff;
-  position: fixed;
-  top: 0;
-  left: 12%;
 }
 .navList li {
   display: inline;
-  margin: 20px 50px 20px 0;
+  padding: 15px;
 }
 .main-container {
   margin-top: 100px;
