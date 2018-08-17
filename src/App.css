@@ -16,15 +16,23 @@ h3 {
   max-width: 1200px;
   margin: 0 auto;
 }
+.StripeCheckout:hover,
+.StripeCheckout:focus,
 .StripeCheckout {
+  background: none !important;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0) 0px 1px 0px !important;
+}
+.StripeCheckout span {
+  content: '';
   display: block;
   margin: 10px auto;
   text-align: center;
-  padding: 10px 30px;
+  padding: 10px 30px !important;
   border: none;
   font-size: 18px;
   outline: none;
-  background: #222;
+  background: #333 !important;
   border-radius: 15px;
   color: #fff;
 }

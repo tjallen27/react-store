@@ -36,6 +36,7 @@ const Checkout = ({ name, description, amount }) =>
     token={onToken(amount, description)}
     currency={CURRENCY}
     stripeKey={STRIPE_PUBLISHABLE}
+    data-panel-label="Buy Now!"
   />
 
 export default Checkout;

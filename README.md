@@ -1,6 +1,8 @@
 ## React Shop
 The aim of the project is to experiment with incorporating stripe payments into a react app.
 
+![alt text](./src/assets/reactStore.png)
+
 ### Tech Used:
 * ReactJS
 * Node.js
